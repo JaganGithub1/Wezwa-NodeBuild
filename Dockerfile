@@ -19,7 +19,7 @@ FROM node:alpine AS build
 LABEL maintainer="BUILD-STAGE <NODE-BUILD>"
 WORKDIR /app
 COPY package*.json ./
-RUN npm install --only=production
+RUN npm install --omit=dev
 COPY . .
 RUN npm build
 
